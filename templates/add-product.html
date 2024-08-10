@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block add_content %}
+    <form method="post" action="{% url 'add_product' %}" enctype="multipart/form-data"># for files
+        {{ form.as_p }}
+        {% csrf_token %}
+        <div class="form-group mb-3">
+            <input type="submit" class="btn btn-success" value="Send" name="send">
+        </div>
+    </form>
+{% endblock %}
+<!-- Core theme JS-->
